@@ -7,7 +7,7 @@ public class AutenticacaoHandler extends AbstractHandler {
     @Override
     public boolean handle(Transacao transacao) {
         if (!transacao.isAutenticado()) {
-            System.out.println("Falha na autenticação.");
+            System.out.println("Falha na autenticação - BLOQUEADO");
             return false;
         }
         return next(transacao);
