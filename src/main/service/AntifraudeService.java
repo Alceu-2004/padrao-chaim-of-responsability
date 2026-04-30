@@ -21,6 +21,19 @@ public class AntifraudeService {
     }
 
     public boolean processar(Transacao transacao) {
-        return chain.handle(transacao);
+        boolean passouNaChain = chain.handle(transacao);
+
+        if (!passouNaChain) {
+            return false;
+        }
+
+        System.out.println("Score final: " + transacao.getScoreRisco());
+
+        if (transacao.getScoreRisco() >= 50) {
+            System.out.println("Transação REPROVADA por alto risco");
+            return false;
+        }
+
+        return true;
     }
 }
