@@ -11,6 +11,6 @@ public class Main {
 
         boolean aprovada = service.processar(transacao);
 
-        System.out.println("Transação aprovada? " + aprovada);
+        System.out.println("Resultado final: " + (aprovada ? "APROVADA" : "REPROVADA"));
     }
 }
