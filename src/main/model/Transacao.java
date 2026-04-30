@@ -7,6 +7,8 @@ public class Transacao {
     private String localizacaoTransacao;
     private boolean autenticado;
 
+    private int scoreRisco = 0; // NOVO
+
     public Transacao(double valor, String localizacaoUsuario, String localizacaoTransacao, boolean autenticado) {
         this.valor = valor;
         this.localizacaoUsuario = localizacaoUsuario;
@@ -28,5 +30,13 @@ public class Transacao {
 
     public boolean isAutenticado() {
         return autenticado;
+    }
+
+    public int getScoreRisco() {
+        return scoreRisco;
+    }
+
+    public void adicionarRisco(int pontos) {
+        this.scoreRisco += pontos;
     }
 }
