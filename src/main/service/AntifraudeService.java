@@ -29,7 +29,7 @@ public class AntifraudeService {
 
         System.out.println("Score final: " + transacao.getScoreRisco());
 
-        if (transacao.getScoreRisco() >= 50) {
+        if (transacao.getScoreRisco() > 50) {
             System.out.println("Transação REPROVADA por alto risco");
             return false;
         }
